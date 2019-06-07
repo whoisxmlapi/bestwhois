@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>bestwhois - a command-line whois-like client for the WHOIS and WHOIS History APIs by WhoisXML API Inc.</title>
+<!-- 2019-06-07 p 09:12 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="WhoisXML API, Inc." />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">bestwhois - a command-line whois-like client for the WHOIS and WHOIS History APIs by WhoisXML API Inc.</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. About</a></li>
+<li><a href="#sec-2">2. Installation</a>
+<ul>
+<li><a href="#sec-2-1">2.1. Prerequisites</a></li>
+<li><a href="#sec-2-2">2.2. Running the program</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. Quick start</a></li>
+<li><a href="#sec-4">4. Specifications</a>
+<ul>
+<li><a href="#sec-4-1">4.1. Command-line options</a></li>
+<li><a href="#sec-4-2">4.2. Output</a></li>
+<li><a href="#sec-4-3">4.3. Return codes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> About</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+The 'bestwhois' command-line utility make queries through the API
+service provided by WhoisXML API, Inc. It is intended as a replacement
+of the standard 'whois' command for domain and IP WHOIS queries, to
+provide accurate queries from our WHOIS database via the WHOIS API
+(<a href="https://whoisapi.whoisxmlapi.com">https://whoisapi.whoisxmlapi.com</a>). In addition it can yield historic
+WHOIS records for domains by invoking the WHOIS history API
+(<a href="https://whois-history-api.whoisxmlapi.com">https://whois-history-api.whoisxmlapi.com</a>).
+</p>
+
+<p>
+By default it gives a pretty-printed human-readable JSON output, which
+is at least as readable and definitely more structured as the standard
+textual output of WHOIS. Optionally it can also print a textual output
+which is closer to usual WHOIS.
+</p>
+
+<p>
+The use of the utility requires a subscription to the Whois API, see
+its details at <a href="https://whoisapi.whoisxmlapi.com"><a href="https://whoisxmlapi.com">https://whoisxmlapi.com</a></a>. A free subscription
+is also available.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Installation</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> Prerequisites</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>The program is written in series 3 Python, so it has to be installed
+</li>
+</ul>
+<p>
+on your system to run. It has been tested with version &gt;= 3.6.
+</p>
+<ul class="org-ul">
+<li>It depends also on the pygments, argparse, and urllib (or urllib2)
+packages. You may install these with the package manager of your OS
+(e.g. apt), or using Python's package manager, 'pip', by doing
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-bash">pip3 install pygments
+</pre>
+</div>
+<p>
+in your shell or Windows command line.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-2-2" class="outline-3">
+<h3 id="sec-2-2"><span class="section-number-3">2.2</span> Running the program</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+<b>Windows users</b> have to rename the file "bestwhois" to "bestwhois.py"
+</p>
+<div class="org-src-container">
+
+<pre class="src src-bash">move bestwhois bestwhois.py
+</pre>
+</div>
+<p>
+and use it as bestwhois.py. When first running, it has to associated
+with Python in this environment.
+</p>
+
+<p>
+Apart from this, all you need is a valid API key which can be obtained
+after registration.  You may specify this for the program in various
+ways:
+</p>
+<ul class="org-ul">
+<li>With the &#x2013;api-key= command-line option
+</li>
+<li>Writing the API key single-line into a text file (named rc file in
+what follows), and specifying the location with the &#x2013;rcfile= option
+</li>
+<li>Naming the rc file  ".bestwhoisrc", and putting it
+to your home directory or next to the script. We recommend to
+withdraw read permissions from other files on this.
+</li>
+<li>Putting the rc file to /etc/bestwhoisrc .
+</li>
+</ul>
+
+<p>
+The program currently uses the same API key for both the WHOIS API and
+the WHOIS History API. If your key is not valid for either of these,
+an error will produced.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Quick start</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Having a proper rc file, the program should simply run from
+command-line. You may want to put it to some location in the path,
+e.g. to /usr/local/bin on UNIX-flavor systems. Just try
+</p>
+<div class="org-src-container">
+
+<pre class="src src-bash">bestwhois domainwhoisdatabase.com
+</pre>
+</div>
+<p>
+(Or 
+</p>
+<div class="org-src-container">
+
+<pre class="src src-bash">bestwhois.py domainwhoisdatabase.com
+</pre>
+</div>
+<p>
+on Windows).
+</p>
+
+<p>
+A help is available with the &#x2013;help option.
+</p>
+
+<p>
+Some further examples:
+</p>
+<ul class="org-ul">
+<li>A simple WHOIS query with text output:
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-bash">bestwhois --text domainwhoisdatabase.com
+</pre>
+</div>
+<ul class="org-ul">
+<li>Simple WHOIS query with raw text fields fully included:
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-bash">bestwhois --fullrawtext domainwhoisdatabase.com
+</pre>
+</div>
+<ul class="org-ul">
+<li>IP WHOIS query with non-colored output:
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-bash">bestwhois --nocolor 104.27.154.235
+</pre>
+</div>
+<ul class="org-ul">
+<li>Full history query:
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-bash">bestwhois --history domainwhoisdatabase.com
+</pre>
+</div>
+<ul class="org-ul">
+<li>History query with date restrictions:
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-bash">bestwhois domainwhoisdatabase.com --created-date-from 2000-01-01 --expired-date-to 2020-01-01
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Specifications</h2>
+<div class="outline-text-2" id="text-4">
+</div><div id="outline-container-sec-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> Command-line options</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+A full list of command-line options can be obtained by invoking the
+program with the &#x2013;help option. 
+</p>
+
+<p>
+Note: the options marked with "(history)" in their description imply
+the use of the WHOIS History API instead of the WHOIS API.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-4-2" class="outline-3">
+<h3 id="sec-4-2"><span class="section-number-3">4.2</span> Output</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+The output consists of parsed WHOIS records as specified by the
+command-line options. The default is a colorized JSON-like text. On
+Windows consoles, coloring is not supported.
+</p>
+
+<p>
+If there are no WHOIS records in the output of the API, the output of
+the API is printed.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-4-3" class="outline-3">
+<h3 id="sec-4-3"><span class="section-number-3">4.3</span> Return codes</h3>
+<div class="outline-text-3" id="text-4-3">
+<ol class="org-ol">
+<li>Normal termination.
+</li>
+<li>Error in the API call. Typical reasons: bad API key, nonexistent domain name in the History API.
+</li>
+<li>No WHOIS records in the reply.
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: v 0.0.1, 2019.06.07.</p>
+<p class="author">Author: WhoisXML API, Inc.</p>
+<p class="date">Created: 2019-06-07 p 09:12</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.2.2 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
