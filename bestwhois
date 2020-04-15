@@ -18,7 +18,7 @@ from pygments.formatters import TerminalFormatter
 
 
 #Static config
-VERSION = "0.0.1"
+VERSION = "0.0.2"
 MYNAME = sys.argv[0].replace('./', '')
 RC_FILE_LOCS=[".bestwhoisrc", os.path.expanduser("~")+"/.bestwhoisrc", "/etc/bestwhois/bestwhoisrc"]
 
@@ -171,7 +171,7 @@ else:
           + 'apiKey=' + apiKey \
           + '&outputformat=JSON&ip=1'
 
-URL = API + '&domainname=' + ARGS.domainName
+URL = API + '&domainName=' + ARGS.domainName
 #Processing optional API arguments for history API if given
 if ARGS.history:
     if ARGS.since_date is not None:

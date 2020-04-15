@@ -58,4 +58,4 @@ if [[ $RETCODE != 0 ]];then echo "ERROR";let ERRORCOUNT++;else echo "OK";fi
 
 #Reporting error count
 echo "ERROR COUNT: $ERRORCOUNT"
-/ERR
+

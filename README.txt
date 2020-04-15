@@ -1,14 +1,14 @@
-	   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-	    BESTWHOIS - A COMMAND-LINE WHOIS-LIKE CLIENT FOR
-	    THE WHOIS AND WHOIS HISTORY APIS BY WHOISXML API
-				  INC.
+		   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+			BESTWHOIS - A COMMAND-LINE WHOIS-LIKE CLIENT FOR
+			THE WHOIS AND WHOIS HISTORY APIS BY WHOISXML API
+								  INC.
 
 
-			   WhoisXML API, Inc.
-	   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+						   WhoisXML API, Inc.
+		   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 
-			  v 0.0.1, 2019.06.07.
+						  v 0.0.2, 2020.04.15.
 
 
 Table of Contents
