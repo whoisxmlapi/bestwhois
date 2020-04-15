@@ -1,0 +1,96 @@
+A simple installation guide for the bestwhois utility
+
+for Windows 10 users with less technical background.
+
+
+Step 1: Installing Python
+-------------------------
+
+This step is just a usual installation of a piece of software.
+
+If you do not yet have Python3 installed
+(that is, no "Python" whatevers come up when you search in applications):
+
+- Open a browser,
+
+- go to https://www.python.org/downloads/,
+
+- press the button to downlad the latest version for Windows,
+
+- say "Run" when you are asked what to do with the downloaded file.
+
+- In the window of the installer, check the "Install launcher for all
+  users" as well as "Add Python 3.8 to PATH" boxes (instead of 3.8,
+  you may see another version), and
+
+- press "Intall now". Agree whenever it says it wants to make changes
+  on your system.
+
+- at the end you have to see "Installation successful". It is also
+  recommended in this phase to also check the "Disable path length
+  limit" box and say O.K. if you are offered to do so.
+
+So far you have Python on your computer.
+
+Step 2: Installing prerequisites for the bestwhois utility
+----------------------------------------------------------
+
+Here we shall run a single command to install some prerequisites.
+
+-Open a command-line Window. (Don't worry, it will be easy.)
+ If you don't know where it is, search for "cmd" in the application search box.
+ 
+
+-A black window appears with a blinking cursor. Now type there
+
+pip install pygments argparse
+
+and press Enter. The computer will work a bit, and report that it has
+successfully installed somethings at the end.
+
+Now your Python is extended with the features needed to run bestwhois.
+
+It is worth keeping the command-line window open; we shall be in the need of it further.
+
+Step 3: Install and use bestwhois
+---------------------------------
+
+Finally we will get the program working.
+
+- Go to https://github.com/whoisxmlapi/bestwhois
+
+- Click the green "Clone or download" button, and choose "Download zip".
+
+- Open the downloaded file, it is a zip archive. Enter the bestwhois-master subdirectory in it.
+
+- copy "bestwhois.py", aka the "bestwhois" Python File to your user directory, "C:\Users\your_username", where "your_username" is your username.
+  (Hint: if you look at the command-line window, this directory is named before the ">" symbol in the command prompt.)
+
+- go to the command prompt, and say
+
+  notepad .bestwhoisrc
+
+- A text editor will appear, and ask if you want to create the file. Create it.
+
+- In the text editor, insert your API code. Save the file and exit.
+
+And we are done.
+
+Now go back to the command prompt.
+
+If you type
+
+    bestwhois.py whoisxmlapi.com
+
+you will get the WHOIS record for whoisxmlapi.com.
+
+Other options to try:
+
+A detailed help message:
+      bestwhois.py --help
+Output in a textual format similar to that of the whois command:
+      bestwhois.py --text whoisxmlapi.com
+Display all historic records
+      bestwhois.py --history whoisxmlapi.com
+
+Do not hesitate to deliberately combine the options and experiment with it.
