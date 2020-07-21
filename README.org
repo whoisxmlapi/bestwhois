@@ -1,6 +1,6 @@
 #+TITLE: bestwhois - a command-line whois-like client for the WHOIS and WHOIS History APIs by WhoisXML API Inc.
 #+AUTHOR: WhoisXML API, Inc.
-#+DATE: v 0.0.2, 2020.04.15.
+#+DATE: v 0.0.3, 2020.07.21.
 
 * About
 
@@ -31,7 +31,12 @@ on your system to run. It has been tested with version >= 3.6.
 #+BEGIN_SRC bash 
 pip3 install pygments
 #+END_SRC
-in your shell or Windows command line.
+in your shell or Windows command line. If you want to query for
+domains with national characters with Unicode encoding, you also need
+the ~idna~ package:
+#+BEGIN_SRC bash 
+pip3 install idna
+#+END_SRC
 ** Running the program
 
 *Windows users* have to rename the file "bestwhois" to "bestwhois.py"
@@ -92,6 +97,12 @@ bestwhois --history domainwhoisdatabase.com
 #+BEGIN_SRC bash
 bestwhois domainwhoisdatabase.com --created-date-from 2000-01-01 --expired-date-to 2020-01-01
 #+END_SRC
+- Query a domain with national characters (the two lines are equivalent):
+#+BEGIN_SRC bash 
+bestwhois москва.рф 
+bestwhois xn--80adxhks.xn--p1ai
+#+END_SRC
+
 * Specifications
 ** Command-line options
 A full list of command-line options can be obtained by invoking the
@@ -107,6 +118,7 @@ Windows consoles, coloring is not supported.
 If there are no WHOIS records in the output of the API, the output of
 the API is printed.
 ** Return codes
-0. Normal termination.
-1. Error in the API call. Typical reasons: bad API key, nonexistent domain name in the History API.
-2. No WHOIS records in the reply.
+- ~0~ :: Normal termination.
+- ~1~ :: Error in the API call. Typical reasons: bad API key, nonexistent domain name in the History API.
+- ~2~ :: No WHOIS records in the reply.
+- ~3~ :: Tried to query a domain with Unicode national characters and the ~idna~ package is not installed.

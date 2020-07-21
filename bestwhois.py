@@ -11,6 +11,11 @@ try:
     from urllib.request import urlopen
 except ImportError:
     from urllib2 import urlopen
+IDN = True
+try:
+    import idna
+except:
+    IDN = False
 import json
 from pygments import highlight
 from pygments.lexers import JsonLexer
@@ -18,7 +23,7 @@ from pygments.formatters import TerminalFormatter
 
 
 #Static config
-VERSION = "0.0.2"
+VERSION = "0.0.3"
 MYNAME = sys.argv[0].replace('./', '')
 RC_FILE_LOCS=[".bestwhoisrc", os.path.expanduser("~")+"/.bestwhoisrc", "/etc/bestwhois/bestwhoisrc"]
 
@@ -73,7 +78,7 @@ ARGS_PARSER = ArgumentParser(
     "Command-line utility to query domains in the WhoisXML API WHOIS service similarly to the whois command.",
     prog=MYNAME)
 #Positional argument: the domain
-ARGS_PARSER.add_argument("domainName", type=str, help="The domain to be queried")
+ARGS_PARSER.add_argument("domainName", type=str, help="The domain to be queried. Domains with national characters can be Unicode or IDN.")
 #Optional arguments
 ARGS_PARSER.add_argument('--version',
                          help='Print version information and exit.',
@@ -154,6 +159,17 @@ else:
 if apiKey is None:
     raise ValueError('No API key found. Check rc files or specify directly.')
 
+#Fix the domain name IDN-wise
+
+if IDN:
+    domain_name = idna.encode(ARGS.domainName).decode('utf-8')
+else:
+    if not all(ord(char) < 128 for char in ARGS.domainName):
+        sys.stderr.write('Please install the "idna" Python package to query non-ASCII unicode domain names.\nExiting.\n')
+        exit(3)
+    else:
+        domain_name = ARGS.domainName
+
 #Deciding which API to use
 if ARGS.history or (ARGS.since_date is not None
                     or ARGS.created_date_from is not None
@@ -171,7 +187,7 @@ else:
           + 'apiKey=' + apiKey \
           + '&outputformat=JSON&ip=1'
 
-URL = API + '&domainName=' + ARGS.domainName
+URL = API + '&domainName=' + domain_name
 #Processing optional API arguments for history API if given
 if ARGS.history:
     if ARGS.since_date is not None:

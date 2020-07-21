@@ -43,7 +43,7 @@ Here we shall run a single command to install some prerequisites.
 
 -A black window appears with a blinking cursor. Now type there
 
-pip install pygments argparse
+pip install pygments argparse idna
 
 and press Enter. The computer will work a bit, and report that it has
 successfully installed somethings at the end.

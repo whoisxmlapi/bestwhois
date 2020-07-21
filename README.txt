@@ -8,7 +8,7 @@
 		   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 
-						  v 0.0.2, 2020.04.15.
+						  v 0.0.3, 2020.07.21.
 
 
 Table of Contents
@@ -66,7 +66,12 @@ Table of Contents
   ┌────
   │ pip3 install pygments
   └────
-  in your shell or Windows command line.
+  in your shell or Windows command line. If you want to query for
+  domains with national characters with Unicode encoding, you also need
+  the `idna' package:
+  ┌────
+  │ pip3 install idna
+  └────
 
 
 2.2 Running the program
@@ -133,6 +138,12 @@ Table of Contents
   ┌────
   │ bestwhois domainwhoisdatabase.com --created-date-from 2000-01-01 --expired-date-to 2020-01-01
   └────
+  • Query a domain with national characters (the two lines are
+    equivalent):
+  ┌────
+  │ bestwhois москва.рф 
+  │ bestwhois xn--80adxhks.xn--p1ai
+  └────
 
 
 4 Specifications
@@ -162,7 +173,9 @@ Table of Contents
 4.3 Return codes
 ────────────────
 
-  1. Normal termination.
-  2. Error in the API call. Typical reasons: bad API key, nonexistent
-     domain name in the History API.
-  3. No WHOIS records in the reply.
+  `0': Normal termination.
+  `1': Error in the API call. Typical reasons: bad API key, nonexistent
+       domain name in the History API.
+  `2': No WHOIS records in the reply.
+  `3': Tried to query a domain with Unicode national characters and the
+       `idna' package is not installed.
