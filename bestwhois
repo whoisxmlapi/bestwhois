@@ -23,7 +23,7 @@ from pygments.formatters import TerminalFormatter
 
 
 #Static config
-VERSION = "0.0.3"
+VERSION = "0.0.4"
 MYNAME = sys.argv[0].replace('./', '')
 RC_FILE_LOCS=[".bestwhoisrc", os.path.expanduser("~")+"/.bestwhoisrc", "/etc/bestwhois/bestwhoisrc"]
 
@@ -183,7 +183,7 @@ if ARGS.history or (ARGS.since_date is not None
                          + '&outputformat=JSON&mode=purchase'
     ARGS.history = True
 else:
-    API = 'http://www.whoisxmlapi.com/whoisserver/WhoisService?'\
+    API = 'https://www.whoisxmlapi.com/whoisserver/WhoisService?'\
           + 'apiKey=' + apiKey \
           + '&outputformat=JSON&ip=1'
 

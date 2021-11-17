@@ -1,14 +1,13 @@
-		   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-			BESTWHOIS - A COMMAND-LINE WHOIS-LIKE CLIENT FOR
-			THE WHOIS AND WHOIS HISTORY APIS BY WHOISXML API
-								  INC.
+	   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+	    BESTWHOIS - A COMMAND-LINE WHOIS-LIKE CLIENT FOR
+	    THE WHOIS AND WHOIS HISTORY APIS BY WHOISXML API
+				  INC.
+
+			   WhoisXML API, Inc.
+	   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 
-						   WhoisXML API, Inc.
-		   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-
-						  v 0.0.3, 2020.07.21.
+			  v 0.0.4, 2021.11.17.
 
 
 Table of Contents
@@ -45,11 +44,11 @@ Table of Contents
   which is closer to usual WHOIS.
 
   The use of the utility requires a subscription to the Whois API, see
-  its details at [[https://whoisxmlapi.com]]. A free subscription is
-  also available.
+  its details at [https://whoisxmlapi.com]. A free subscription is also
+  available.
 
 
-  [[https://whoisxmlapi.com]] https://whoisapi.whoisxmlapi.com
+[https://whoisxmlapi.com] https://whoisapi.whoisxmlapi.com
 
 
 2 Installation
@@ -173,9 +172,13 @@ Table of Contents
 4.3 Return codes
 ────────────────
 
-  `0': Normal termination.
-  `1': Error in the API call. Typical reasons: bad API key, nonexistent
-       domain name in the History API.
-  `2': No WHOIS records in the reply.
-  `3': Tried to query a domain with Unicode national characters and the
-       `idna' package is not installed.
+  `0'
+        Normal termination.
+  `1'
+        Error in the API call. Typical reasons: bad API key, nonexistent
+        domain name in the History API.
+  `2'
+        No WHOIS records in the reply.
+  `3'
+        Tried to query a domain with Unicode national characters and the
+        `idna' package is not installed.
