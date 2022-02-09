@@ -1,6 +1,6 @@
 bestwhois - a command-line whois-like client for the WHOIS and WHOIS History APIs by WhoisXML API Inc.
 
-v 0.0.4, 2021.11.17.
+v 0.1.0, 2022.02.08.
 
 Files:
 

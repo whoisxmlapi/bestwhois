@@ -7,7 +7,7 @@
 	   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 
-			  v 0.0.4, 2021.11.17.
+			  v 0.1.0, 2022.02.08.
 
 
 Table of Contents
@@ -59,11 +59,11 @@ Table of Contents
 
   • The program is written in series 3 Python, so it has to be installed
   on your system to run. It has been tested with version >= 3.6.
-  • It depends also on the pygments, argparse, and urllib (or urllib2)
+  • It depends also on the pygments, argparse, and requests
     packages. You may install these with the package manager of your OS
     (e.g. apt), or using Python's package manager, 'pip', by doing
   ┌────
-  │ pip3 install pygments
+  │ pip3 install pygments argparse requests
   └────
   in your shell or Windows command line. If you want to query for
   domains with national characters with Unicode encoding, you also need

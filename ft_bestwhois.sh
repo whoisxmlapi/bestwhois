@@ -29,7 +29,7 @@ if [[ $RETCODE != 2 ]];then echo "ERROR";let ERRORCOUNT++;else echo "OK";fi
 echo "Test No. 6"
 ./bestwhois foobar --history
 RETCODE=$?
-if [[ $RETCODE != 1 ]];then echo "ERROR";let ERRORCOUNT++;else echo "OK";fi
+if [[ $RETCODE != 2 ]];then echo "ERROR";let ERRORCOUNT++;else echo "OK";fi
 echo "Test No. 7"
 ./bestwhois domainwhoisdatabase.com --created-date-from 2000-01-01 --created-date-to 2016-01-01
 RETCODE=$?

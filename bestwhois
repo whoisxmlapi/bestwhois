@@ -7,23 +7,20 @@ import sys
 import os.path
 import datetime
 from argparse import ArgumentParser
-try:
-    from urllib.request import urlopen
-except ImportError:
-    from urllib2 import urlopen
+import requests
+import json
 IDN = True
 try:
     import idna
 except:
     IDN = False
-import json
 from pygments import highlight
 from pygments.lexers import JsonLexer
 from pygments.formatters import TerminalFormatter
 
 
 #Static config
-VERSION = "0.0.4"
+VERSION = "0.1.0"
 MYNAME = sys.argv[0].replace('./', '')
 RC_FILE_LOCS=[".bestwhoisrc", os.path.expanduser("~")+"/.bestwhoisrc", "/etc/bestwhois/bestwhoisrc"]
 
@@ -206,7 +203,7 @@ if ARGS.history:
         URL += '&expiredDateTo=%s'%ARGS.expired_date_to
 
 try:
-    result = json.loads(urlopen(URL).read().decode('utf8'))
+    result = requests.get(URL).json()
 except Exception as e:
     sys.stderr.write('Error invoking API. The API key or the domain name is probably invalid.\n')
     sys.stderr.write('Error text: %s\n'%str(e))

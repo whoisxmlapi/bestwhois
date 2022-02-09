@@ -43,7 +43,7 @@ Here we shall run a single command to install some prerequisites.
 
 -A black window appears with a blinking cursor. Now type there
 
-pip install pygments argparse idna
+pip install pygments argparse idna requests
 
 and press Enter. The computer will work a bit, and report that it has
 successfully installed somethings at the end.
@@ -94,3 +94,20 @@ Display all historic records
       bestwhois.py --history whoisxmlapi.com
 
 Do not hesitate to deliberately combine the options and experiment with it.
+
+Remark: working with bestwhois.py in PowerShell
+-----------------------------------------------
+
+When using PowerShell, "python.py" will run, but it will open a
+separate console that will disappear as soon as the results are
+printed. To avoid this, bestwhois should be used with "python" in
+front of it like this:
+
+PS C:\work\bestwhois> python bestwhois.py whoisxmlapi.com
+
+or
+
+PS C:\work\bestwhois> python bestwhois whoisxmlapi.com
+
+(Note that we are in the directory where "bestwhois" and
+"bestwhois.py" reside; the full path may be needed otherwise.)

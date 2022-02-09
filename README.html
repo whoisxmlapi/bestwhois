@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-11-17 Wed 07:34 -->
+<!-- 2022-02-09 Wed 02:28 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>bestwhois - a command-line whois-like client for the WHOIS and WHOIS History APIs by WhoisXML API Inc.</title>
@@ -234,27 +234,27 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org6f8b377">1. About</a></li>
-<li><a href="#orga7462f1">2. Installation</a>
+<li><a href="#orgd460417">1. About</a></li>
+<li><a href="#orgab23b20">2. Installation</a>
 <ul>
-<li><a href="#orgd1c0dc2">2.1. Prerequisites</a></li>
-<li><a href="#orgd3792f3">2.2. Running the program</a></li>
+<li><a href="#org3fdf284">2.1. Prerequisites</a></li>
+<li><a href="#orgb32a639">2.2. Running the program</a></li>
 </ul>
 </li>
-<li><a href="#orgb8877ef">3. Quick start</a></li>
-<li><a href="#org9d548b9">4. Specifications</a>
+<li><a href="#org8589272">3. Quick start</a></li>
+<li><a href="#orgdd7af70">4. Specifications</a>
 <ul>
-<li><a href="#org07a0b16">4.1. Command-line options</a></li>
-<li><a href="#org7c94313">4.2. Output</a></li>
-<li><a href="#org9f0297f">4.3. Return codes</a></li>
+<li><a href="#org97effc8">4.1. Command-line options</a></li>
+<li><a href="#org934e24c">4.2. Output</a></li>
+<li><a href="#org26034c1">4.3. Return codes</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org6f8b377" class="outline-2">
-<h2 id="org6f8b377"><span class="section-number-2">1</span> About</h2>
+<div id="outline-container-orgd460417" class="outline-2">
+<h2 id="orgd460417"><span class="section-number-2">1</span> About</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 The 'bestwhois' command-line utility make queries through the API
@@ -281,12 +281,12 @@ is also available.
 </div>
 </div>
 
-<div id="outline-container-orga7462f1" class="outline-2">
-<h2 id="orga7462f1"><span class="section-number-2">2</span> Installation</h2>
+<div id="outline-container-orgab23b20" class="outline-2">
+<h2 id="orgab23b20"><span class="section-number-2">2</span> Installation</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-orgd1c0dc2" class="outline-3">
-<h3 id="orgd1c0dc2"><span class="section-number-3">2.1</span> Prerequisites</h3>
+<div id="outline-container-org3fdf284" class="outline-3">
+<h3 id="org3fdf284"><span class="section-number-3">2.1</span> Prerequisites</h3>
 <div class="outline-text-3" id="text-2-1">
 <ul class="org-ul">
 <li>The program is written in series 3 Python, so it has to be installed</li>
@@ -295,12 +295,12 @@ is also available.
 on your system to run. It has been tested with version &gt;= 3.6.
 </p>
 <ul class="org-ul">
-<li>It depends also on the pygments, argparse, and urllib (or urllib2)
+<li>It depends also on the pygments, argparse, and requests
 packages. You may install these with the package manager of your OS
 (e.g. apt), or using Python's package manager, 'pip', by doing</li>
 </ul>
 <div class="org-src-container">
-<pre class="src src-bash">pip3 install pygments
+<pre class="src src-bash">pip3 install pygments argparse requests
 </pre>
 </div>
 <p>
@@ -314,8 +314,8 @@ the <code>idna</code> package:
 </div>
 </div>
 </div>
-<div id="outline-container-orgd3792f3" class="outline-3">
-<h3 id="orgd3792f3"><span class="section-number-3">2.2</span> Running the program</h3>
+<div id="outline-container-orgb32a639" class="outline-3">
+<h3 id="orgb32a639"><span class="section-number-3">2.2</span> Running the program</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 <b>Windows users</b> have to rename the file "bestwhois" to "bestwhois.py"
@@ -353,8 +353,8 @@ an error will produced.
 </div>
 </div>
 
-<div id="outline-container-orgb8877ef" class="outline-2">
-<h2 id="orgb8877ef"><span class="section-number-2">3</span> Quick start</h2>
+<div id="outline-container-org8589272" class="outline-2">
+<h2 id="org8589272"><span class="section-number-2">3</span> Quick start</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Having a proper rc file, the program should simply run from
@@ -429,12 +429,12 @@ bestwhois xn--80adxhks.xn--p1ai
 </div>
 </div>
 
-<div id="outline-container-org9d548b9" class="outline-2">
-<h2 id="org9d548b9"><span class="section-number-2">4</span> Specifications</h2>
+<div id="outline-container-orgdd7af70" class="outline-2">
+<h2 id="orgdd7af70"><span class="section-number-2">4</span> Specifications</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-org07a0b16" class="outline-3">
-<h3 id="org07a0b16"><span class="section-number-3">4.1</span> Command-line options</h3>
+<div id="outline-container-org97effc8" class="outline-3">
+<h3 id="org97effc8"><span class="section-number-3">4.1</span> Command-line options</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 A full list of command-line options can be obtained by invoking the
@@ -447,8 +447,8 @@ the use of the WHOIS History API instead of the WHOIS API.
 </p>
 </div>
 </div>
-<div id="outline-container-org7c94313" class="outline-3">
-<h3 id="org7c94313"><span class="section-number-3">4.2</span> Output</h3>
+<div id="outline-container-org934e24c" class="outline-3">
+<h3 id="org934e24c"><span class="section-number-3">4.2</span> Output</h3>
 <div class="outline-text-3" id="text-4-2">
 <p>
 The output consists of parsed WHOIS records as specified by the
@@ -462,8 +462,8 @@ the API is printed.
 </p>
 </div>
 </div>
-<div id="outline-container-org9f0297f" class="outline-3">
-<h3 id="org9f0297f"><span class="section-number-3">4.3</span> Return codes</h3>
+<div id="outline-container-org26034c1" class="outline-3">
+<h3 id="org26034c1"><span class="section-number-3">4.3</span> Return codes</h3>
 <div class="outline-text-3" id="text-4-3">
 <dl class="org-dl">
 <dt><code>0</code></dt><dd>Normal termination.</dd>
@@ -476,9 +476,9 @@ the API is printed.
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Date: v 0.0.4, 2021.11.17.</p>
+<p class="date">Date: v 0.1.0, 2022.02.08.</p>
 <p class="author">Author: WhoisXML API, Inc.</p>
-<p class="date">Created: 2021-11-17 Wed 07:34</p>
+<p class="date">Created: 2022-02-09 Wed 02:28</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
